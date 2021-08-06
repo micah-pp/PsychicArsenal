@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="ApparelNoQualityBase">
+    <defName>PP_MentalRelocater</defName>
+    <label>mental relocater</label>
+    <description>A single use tool that allows the psycaster to temporarily place their consciousness into another pawn. This both incapacitates the caster for a variable amount of time while also greatly boosting the target's capabilites during that time. There are several stages of efficacy that require certain psyfocus and psyilnk levels to reach
+
+Stages: 
+4: psylink level &gt; 4 and psyfocus &gt; 90%, lasts 24 hours
+3: psylink level &gt; 3 and psyfocus &gt; 50%, lasts 12 hours
+2: psylink level &gt; 2 and psyfocus &gt; 25%, lasts 6 hours
+1: a warm body                                      , lasts 4 hours
+			
+&lt;color=orange&gt;&lt;b&gt;Compatible Psycasts:  &lt;/b&gt;&lt;/color&gt;Beckon, Neural Heat Dump, Focus</description>
+    <graphicData>
+      <texPath>Weapons/MentalRelocater</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <techLevel>Archotech</techLevel>
+    <tradeTags>
+      <li>Artifact</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+    <statBases>
+      <Mass>0.5</Mass>
+      <EquipDelay>2</EquipDelay>
+      <MarketValue>650</MarketValue>
+      <MaxHitPoints>80</MaxHitPoints>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <apparel>
+      <scoreOffset>4</scoreOffset>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+    </apparel>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <tradeNeverStack>true</tradeNeverStack>
+    <smeltable>false</smeltable>
+    <burnableByRecipe>false</burnableByRecipe>
+    <drawGUIOverlay>false</drawGUIOverlay>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_PsychicArsenal">
+			<isPsychicWeapon>true</isPsychicWeapon>
+			<compatibleAbilities>
+				<li>Beckon</li>
+				<li>NeuralHeatDump</li>
+				<li>Focus</li>
+			</compatibleAbilities>
+		</li>
+		<li Class="Psychic_Arsenal.ModExtension_MentalR">
+			<mindGraft1>PP_MindGraft1</mindGraft1>
+			<mindGraft2>PP_MindGraft2</mindGraft2>
+			<mindGraft3>PP_MindGraft3</mindGraft3>
+			<mindGraft4>PP_MindGraft4</mindGraft4>
+			<coma>PsychicComa</coma>
+		</li>
+	</modExtensions>
+    <verbs>
+      <li>
+        <verbClass>Verb_CastTargetEffect</verbClass>
+        <label>mental relocater</label>
+        <hasStandardCommand>true</hasStandardCommand>
+        <targetable>true</targetable>
+        <onlyManualCast>True</onlyManualCast>
+        <range>4.9</range>
+        <warmupTime>0.5</warmupTime>
+        <targetParams>
+          <canTargetBuildings>false</canTargetBuildings>
+          <onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+          <neverTargetIncapacitated>true</neverTargetIncapacitated>
+        </targetParams>
+        <soundCast>PP_Relocater</soundCast>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CompProperties_Reloadable">
+        <maxCharges>1</maxCharges>
+        <destroyOnEmpty>true</destroyOnEmpty>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>charge</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+      <li>
+        <compClass>Psychic_Arsenal.MentalRelocaterComp</compClass>
+      </li>
+      <li Class="CompProperties_TargetEffect_FleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+      <li Class="CompProperties_TargetEffect_FleckConnecting">
+        <fleckDef>PsycastPsychicLine</fleckDef>
+      </li>
+    </comps>
+  </ThingDef>
+  
+    <RecipeDef>
+    <defName>MakeMentalRelocater</defName>
+    <label>make Mental Relocater</label>
+    <description>Craft a Mental Relocater.</description>
+    <jobString>Making Mental Relocater.</jobString>
+	<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+	<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    <workAmount>8000</workAmount>
+	<recipeUsers>
+      <li>TableMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+	   <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>ComponentIndustrial</li>
+		<li>Plasteel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <PP_MentalRelocater>1</PP_MentalRelocater>
+    </products>
+    <researchPrerequisite>Machining</researchPrerequisite>
+	<skillRequirements>
+		<Crafting>6</Crafting>
+	</skillRequirements>
+	<workSkill>Crafting</workSkill>
+  </RecipeDef>
+  
+</Defs>

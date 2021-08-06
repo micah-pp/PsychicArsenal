@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+ <SoundDef>
+    <defName>PP_PortalShot</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/ReverseShield</clipFolderPath>
+          </li>
+        </grains>      
+        <pitchRange>
+          <min>0.83</min>        
+          <max>1.15</max>
+        </pitchRange>
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>    
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>PP_Relocater</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/Relocater</clipFolderPath>
+          </li>
+        </grains>      
+        <pitchRange>
+          <min>0.83</min>        
+          <max>1.15</max>
+        </pitchRange>
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>    
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>PP_VoiceCaster</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/VoiceCaster</clipFolderPath>
+          </li>
+        </grains>      
+        <pitchRange>
+          <min>0.83</min>        
+          <max>1.15</max>
+        </pitchRange>
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>    
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>PP_LLShot</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/LightningLaunch</clipFolderPath>
+          </li>
+        </grains>      
+        <pitchRange>
+          <min>0.83</min>        
+          <max>1.15</max>
+        </pitchRange>
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>    
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>PP_FaustShot</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/solarfaust</clipFolderPath>
+          </li>
+        </grains>      
+        <pitchRange>
+          <min>0.83</min>        
+          <max>1.15</max>
+        </pitchRange>
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>    
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>PP_RHRShot</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/RHRShot</clipFolderPath>
+          </li>
+        </grains>      
+        <pitchRange>
+          <min>0.83</min>        
+          <max>1.15</max>
+        </pitchRange>
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>    
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>PP_MegaphoneShot</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/Megaphone</clipFolderPath>
+          </li>
+        </grains>      
+        <pitchRange>
+          <min>0.83</min>        
+          <max>1.15</max>
+        </pitchRange>
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>    
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  </Defs>

@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Right Hand Ruler -->
+
+<ThingDef ParentName="BaseBullet">
+    <defName>PP_Right_Hand_Ruler_Bullet</defName>
+    <label>R. hand ruler bullet</label>
+    <graphicData>
+      <texPath>Projectiles/rhrBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>5</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
+      <speed>80</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>PP_Right_Hand_Ruler</defName>
+    <label>Right Hand Ruler</label>
+    <description>Simply a spring affixed to a wooden ruler acting as a rudimentary coil gun. Although terribly lacking in damage, range, accuracy, and practicality it somewhat makes up for it in cost of supplies and ease of creation.
+	
+&lt;color=orange&gt;&lt;b&gt;Compatible Psycasts:  &lt;/b&gt;&lt;/color&gt;Stun, Flashstorm</description>
+    <graphicData>
+      <texPath>Weapons/RHR</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>0.5</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.5</AccuracyShort>
+      <AccuracyMedium>0.3</AccuracyMedium>
+      <AccuracyLong>0.15</AccuracyLong>
+      <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags Inherit="False">
+      <li>psychicGun</li>
+    </weaponTags>
+    <costList>
+      <Steel>10</Steel>
+	  <WoodLog>10</WoodLog>
+    </costList>
+    <recipeMaker>
+		<recipeUsers>
+			<li>CraftingSpot</li>
+		</recipeUsers>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>PP_Right_Hand_Ruler_Bullet</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>15</range>
+        <soundCast>PP_RHRShot</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>ruler</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_PsychicArsenal">
+			<isPsychicWeapon>true</isPsychicWeapon>
+			<compatibleAbilities>
+				<li>Stun</li>
+				<li>Flashstorm</li>
+			</compatibleAbilities>
+			<entropyGain>5.0</entropyGain>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  
+  <!-- Megaphone -->
+
+ <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>PP_Megaphone</defName>
+    <label>megaphone</label>
+    <description>Modeled after a regular megaphone, this device works with psycasters able to affect others via the medium of sound to enhance those capabilities. Not making use of any specific voice power, rather this weapon simply bundles loud noises with psychic bursts to muddle or distress the target(s).
+	
+&lt;color=orange&gt;&lt;b&gt;Compatible Psycasts:  &lt;/b&gt;&lt;/color&gt;Word of Joy, Word of Love, Word of Serenity, Word of Inspiration</description>
+    <graphicData>
+      <texPath>Weapons/megaphone</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <generateCommonality>0.3</generateCommonality>
+	<weaponTags Inherit="False">
+      <li>psychicGun</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>3.4</Mass>
+      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>MegaphoneProjectile</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <range>23.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>PP_MegaphoneShot</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+      <li>
+        <label>horn</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_PsychicArsenal">
+			<isPsychicWeapon>true</isPsychicWeapon>
+			<compatibleAbilities>
+				<li>WordOfJoy</li>
+				<li>WordOfLove</li>
+				<li>WordOfSerenity</li>
+				<li>WordOfInspiration</li>
+			</compatibleAbilities>
+			<entropyGain>15.0</entropyGain>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>MegaphoneProjectile</defName>
+    <label>ppsound</label>
+    <graphicData>
+      <texPath>Projectiles/sound</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+	  <drawSize>(2,1.5)</drawSize>
+    </graphicData>
+    <thingClass>Psychic_Arsenal.MegaphoneProjectilePatch</thingClass>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_MegaphoneProjectile">
+			<addStunChance>0.6</addStunChance>
+			<addDazeChance>0.03</addDazeChance>
+			<addFleeChance>0.07</addFleeChance>
+		</li>
+	</modExtensions>
+    <projectile>
+      <speed>40</speed>
+      <damageDef>Bomb</damageDef>
+	  <damageAmountBase>10</damageAmountBase>
+      <explosionRadius>2.1</explosionRadius>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+  <!-- Skip Bow -->
+  
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>PP_Skip_Bow</defName>
+    <label>skip bow</label>
+    <description>An advanced crossbow with a built in targeting system to help designate distant threats. The targeting system allows the user to more easily skip their projectile to a more advantageous position.
+	
+&lt;color=orange&gt;&lt;b&gt;Compatible Psycasts:  &lt;/b&gt;&lt;/color&gt;Skip, Farskip</description>
+    <graphicData>
+      <texPath>Weapons/crossbow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	   <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Bow_Recurve</soundInteract>
+    <costList>
+      <WoodLog>20</WoodLog>
+	  <Steel>50</Steel>
+	  <ComponentIndustrial>5</ComponentIndustrial>
+	  <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.3</Mass>
+      <AccuracyTouch>0.70</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags Inherit="False">
+		<li>psychicGun</li>
+    </weaponTags>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <researchPrerequisite>RecurveBow</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Psychic_Arsenal.Skip_Bow_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>PP_Skip_Bow_Arrow</defaultProjectile>
+        <warmupTime>1.45</warmupTime>
+		<minRange>4.9</minRange>
+        <range>44.9</range>
+        <soundCast>PP_PortalShot</soundCast>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_PsychicArsenal">
+			<isPsychicWeapon>true</isPsychicWeapon>
+			<compatibleAbilities>
+				<li>Skip</li>
+				<li>Farskip</li>
+			</compatibleAbilities>
+			<entropyGain>15.0</entropyGain>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>PP_Skip_Bow_Arrow</defName>
+    <label>skip bow arrow</label>
+    <graphicData>
+      <texPath>Projectiles/skipArrow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<thingClass>Psychic_Arsenal.SkipBowProjectilePatch</thingClass>
+    <projectile>
+      <damageDef>ArrowHighVelocity</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+	  <armorPenetrationBase>0.65</armorPenetrationBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>400</speed>
+	  <alwaysFreeIntercept>false</alwaysFreeIntercept>
+    </projectile>
+  </ThingDef>
+  
+  <!--Solarfaust-->
+  
+   <ThingDef ParentName="BaseGun">
+    <defName>PP_Solarfaust</defName>
+    <label>solarfaust</label>
+    <description>A cheaply produced single use antiarmor weapon. A psycaster tethers a solar pinhole to a hollow compartment below the payload in the projectile. They then proceed to seal the opening by inserting a fitted wooden pole into it. After a brief period of time the expansion of gasses in the hollow forces the projectile off the pole, and towards the desired target.
+	
+&lt;color=orange&gt;&lt;b&gt;Compatible Psycasts:  &lt;/b&gt;&lt;/color&gt;Solar pinhole</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Weapons/solarfaust</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>7</Mass>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+	  <WorkToMake>5000</WorkToMake>
+    </statBases>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <techLevel>Industrial</techLevel>
+    <weaponTags Inherit="False">
+      <li>psychicGun</li>
+      <li>GunSingleUse</li>
+    </weaponTags>
+    <thingSetMakerTags>
+      <li>SingleUseWeapon</li>
+    </thingSetMakerTags>
+	<costList>
+      <WoodLog>20</WoodLog>
+	  <Steel>30</Steel>
+	  <Chemfuel>20</Chemfuel>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Psychic_Arsenal.PsychicSingleShoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>PP_Faust_Rocket</defaultProjectile>
+        <forcedMissRadius>2.9</forcedMissRadius>
+        <warmupTime>3</warmupTime>
+        <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+        <range>25.9</range>
+        <soundCast>PP_FaustShot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>pole</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_PsychicArsenal">
+			<isPsychicWeapon>true</isPsychicWeapon>
+			<compatibleAbilities>
+				<li>SolarPinhole</li>
+			</compatibleAbilities>
+			<entropyGain>25.0</entropyGain>
+		</li>
+	</modExtensions>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <RecipeDef>
+    <defName>MakeSolarfaust</defName>
+    <label>make Solarfaust</label>
+    <description>Craft a Solarfaust.</description>
+    <jobString>Making Solarfaust.</jobString>
+	<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+	<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    <workAmount>5000</workAmount>
+	<recipeUsers>
+      <li>TableMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>WoodLog</li>
+        <li>Chemfuel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <PP_Solarfaust>1</PP_Solarfaust>
+    </products>
+    <researchPrerequisite>Machining</researchPrerequisite>
+	<skillRequirements>
+		<Crafting>5</Crafting>
+	</skillRequirements>
+	<workSkill>Crafting</workSkill>
+  </RecipeDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>PP_Faust_Rocket</defName>
+    <label>faust rocket</label>
+    <graphicData>
+      <texPath>Projectiles/faustRocket3</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+	  <damageAmountBase>40</damageAmountBase>
+      <!-- Use default damage from explosion def -->
+      <explosionRadius>2</explosionRadius>
+      <speed>50</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!-- Diminishing Spear
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>PP_Spear_Proj</defName>
+    <label>diminishing spear projectile</label>
+    <graphicData>
+      <texPath>Things/Projectile/Pilum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>40</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>PP_Diminishing_Spear</defName>
+    <label>diminishing spear</label>
+    <description>A gauntlet with a large solenoid firmly affixed to the back. A ferrous metal spike is held in place within the solenoid while the wielder concurrently applies a small current through the gauntlet, and pulls up particulates from the area around them. Metallic particles will begin to stick to the ferrous spike, until a suitable size is reached, where upon the wielder will apply a much larger current to launch the projectile. Along it's flight path friction with the air will continually remove the metallic particles, diminishing mass while retaining speed via the priniples of pseudo science.
+	
+&lt;color=orange&gt;&lt;b&gt;Compatible Psycasts:  &lt;/b&gt;&lt;/color&gt;Flashstorm
+&lt;color=orange&gt;&lt;b&gt;Secondary Psycasts:  &lt;/b&gt;&lt;/color&gt;Chunkskip, Smokepop</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Pilum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>0.5</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.5</AccuracyShort>
+      <AccuracyMedium>0.3</AccuracyMedium>
+      <AccuracyLong>0.15</AccuracyLong>
+      <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>psychicGun</li>
+    </weaponTags>
+    <costList>
+      <Steel>10</Steel>
+	  <WoodLog>10</WoodLog>
+    </costList>
+    <recipeMaker>
+		<recipeUsers>
+			<li>CraftingSpot</li>
+		</recipeUsers>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>PP_Spear_Proj</defaultProjectile>
+        <warmupTime>2.0</warmupTime>
+        <range>20</range>
+        <soundCast>Interact_BeatFire</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>ruler</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_PsychicArsenal">
+			<isPsychicWeapon>true</isPsychicWeapon>
+			<compatibleAbilities>
+				<li>Flashstorm</li>
+			</compatibleAbilities>
+			<secondaryAbilities>
+				<li>Chunkskip</li>
+				<li>Smokepop</li>
+			</secondaryAbilities>
+			<entropyGain>5.0</entropyGain>
+		</li>
+	</modExtensions>
+  </ThingDef> -->
+  
+  <!--Chain Lightning Launcher-->
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>PP_Lightning_Launcher</defName>
+    <label>lightning launcher</label>
+    <description>The psionic user creates and discharges a large amount of electricity into a series of attached capacitors. Once they're fully charged the electricity is released in the form of a highspeed electric arc that will bounce between any warm bodies in the area.
+WARNING: The lightning bolt does not descriminate between friend or foe, any pawn (excluding the caster) caught in the effected area will be hit. Will not automatically fire partially due to this.
+	
+&lt;color=orange&gt;&lt;b&gt;Compatible Psycasts:  &lt;/b&gt;&lt;/color&gt;Flashstorm
+&lt;color=orange&gt;&lt;b&gt;Psychic Heat Gain:  &lt;/b&gt;&lt;/color&gt;25</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Weapons/ll</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeLance</soundInteract>
+    <statBases>
+      <Mass>8</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.85</AccuracyMedium>
+      <AccuracyLong>0.75</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+      <WorkToMake>60000</WorkToMake>
+	  <MarketValue>1500</MarketValue>	
+    </statBases>
+	<recipeMaker Inherit="False" />
+	<thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <weaponTags Inherit="False">
+		<li>psychicGun</li>
+    </weaponTags>
+	<costList>
+      <Plasteel>100</Plasteel>
+      <ComponentSpacer>5</ComponentSpacer>
+    </costList>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_PsychicArsenal">
+			<isPsychicWeapon>true</isPsychicWeapon>
+			<compatibleAbilities>
+				<li>Flashstorm</li>
+			</compatibleAbilities>
+			<entropyGain>25.0</entropyGain>
+		</li>
+	</modExtensions>
+    <verbs>
+      <li>
+        <verbClass>Psychic_Arsenal.PsychicShoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>PP_Chain_Lightning</defaultProjectile>
+        <warmupTime>2.0</warmupTime>
+        <range>35.9</range>
+        <soundCast>PP_LLShot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+		<onlyManualCast>true</onlyManualCast>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>PP_Chain_Lightning</defName>
+    <label>chain lightning</label>
+    <graphicData>
+      <texPath>Projectiles/arcball</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>(1,2)</drawSize>
+    </graphicData>
+	<thingClass>Psychic_Arsenal.ChainLightningProjectilePatch</thingClass>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.SpawnerProjectileModExtension">
+			<spawnedProjectile>PP_Lightning_Secondary</spawnedProjectile>
+			<originalLauncher>PP_Lightning_Launcher</originalLauncher>
+		</li>
+	</modExtensions>
+    <projectile>
+      <damageDef>Burn</damageDef>
+      <damageAmountBase>40</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>100</speed>
+	  <explosionRadius>0.01</explosionRadius>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>PP_Lightning_Secondary</defName>
+    <label>lightning jump</label>
+    <graphicData>
+      <texPath>Projectiles/arcball</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>(0.5,1)</drawSize>
+    </graphicData>
+	<thingClass>Psychic_Arsenal.LightningSecondaryProjectilePatch</thingClass>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.SpawnerProjectileModExtension">
+			<spawnedProjectile>PP_Lightning_Secondary</spawnedProjectile>
+			<originalLauncher>PP_Lightning_Launcher</originalLauncher>
+			<checkRadius>4.0</checkRadius>
+		</li>
+	</modExtensions>
+    <projectile>
+      <damageDef>Burn</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!--Reverse Shield-->
+  
+   <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>PP_Reverse_Shield</defName>
+    <label>reverse shield</label>
+    <description>Less a weapon, and more a psionic hacking tool, this device locates any current usage of Skipshield on the planet and hijacks the exit port. The exit port is then sent moving toward the target releasing a barrage of arms-fire along its path.
+WARNING: Can hit anything and anyone along the path.
+	
+&lt;color=orange&gt;&lt;b&gt;Compatible Psycasts:  &lt;/b&gt;&lt;/color&gt;Skipshield
+&lt;color=orange&gt;&lt;b&gt;Psychic Heat Gain:  &lt;/b&gt;&lt;/color&gt;40</description>
+    <graphicData>
+      <texPath>Weapons/rs</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+	  <MarketValue>1500</MarketValue>	
+      <WorkToMake>12000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker Inherit="False" />
+	<weaponTags Inherit="False">
+		<li>psychicGun</li>
+	</weaponTags>
+	<costList>
+      <Plasteel>100</Plasteel>
+      <ComponentSpacer>5</ComponentSpacer>
+    </costList>
+	<thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_PsychicArsenal">
+			<isPsychicWeapon>true</isPsychicWeapon>
+			<compatibleAbilities>
+				<li>BulletShield</li>
+			</compatibleAbilities>
+			<entropyGain>40.0</entropyGain>
+		</li>
+	</modExtensions>
+    <verbs>
+      <li>
+        <verbClass>Psychic_Arsenal.PsychicShoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+		<onlyManualCast>true</onlyManualCast>
+        <defaultProjectile>PP_ReverseShield_Bullet</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>36.9</range>
+        <soundCast>PP_PortalShot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+		<targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>PP_ReverseShield_Bullet</defName>
+    <label>reverse shield projectile</label>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>1</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>10</speed>
+	  <explosionRadius>0.01</explosionRadius>
+	  <alwaysFreeIntercept>false</alwaysFreeIntercept>
+    </projectile>
+	<thingClass>Psychic_Arsenal.ReverseShieldProjectile</thingClass>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.SpawnerProjectileModExtension">
+			<projectileChoices>
+				<li>Bullet_BoltActionRifle</li>
+				<li>Bullet_Revolver</li>
+				<li>Bullet_Shotgun</li>
+				<li>Bullet_AssaultRifle</li>
+				<li>Bullet_SniperRifle</li>
+				<li>Bullet_ChargeLance</li>
+				<li>Bullet_IncendiaryLauncher</li>
+			</projectileChoices>
+			<checkRadius>5.0</checkRadius>
+		</li>
+	</modExtensions>
+    <graphicData>
+      <texPath>Projectiles/reverseshield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>2</drawSize>
+    </graphicData>
+  </ThingDef>
+  
+  <!--Voice Caster-->
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>PP_Projected_Voice</defName>
+    <label>projected voice</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_VoiceProjectile">
+			<berserkChance>0.1</berserkChance>
+			<dazeChance>0.2</dazeChance>
+			<fleeChance>0.3</fleeChance>
+			<manhunterChance>0.5</manhunterChance>
+			<enrageChance>0.6</enrageChance>
+			<stunChance>0.05</stunChance>
+			<buff>PP_Enrage</buff>
+		</li>
+	</modExtensions>
+	<thingClass>Psychic_Arsenal.VoiceCasterProjectile</thingClass>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <stoppingPower>0.1</stoppingPower>
+      <speed>100</speed>
+	  <explosionRadius>0.01</explosionRadius>
+	  <alwaysFreeIntercept>false</alwaysFreeIntercept>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>PP_Voice_Caster</defName>
+    <label>voice caster</label>
+    <description>Allows a psionic pawn to directly project their voice into a distant pawn's head. For enemies this could mean driving them berserk, or spoiling their morale. For allies a rousing speech could boost their capabilites. There is always an intrinsic chance to fail though, and can occasionally lead to undesired results.
+	
+&lt;color=orange&gt;&lt;b&gt;Compatible Psycasts:  &lt;/b&gt;&lt;/color&gt;Berserk, Berserk Pulse, Manhunter Pulse, Neuroquake
+&lt;color=orange&gt;&lt;b&gt;Secondary Psycasts:  &lt;/b&gt;&lt;/color&gt;Word of Trust, Word of Joy, Word of Love, Word of Serenity, Word of Inspiration
+&lt;color=orange&gt;&lt;b&gt;Psychic Heat Gain:  &lt;/b&gt;&lt;/color&gt;25</description>
+    <graphicData>
+      <texPath>Weapons/VoiceCaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>4000</WorkToMake>
+      <Mass>1.4</Mass>
+      <AccuracyTouch>0.9</AccuracyTouch>
+      <AccuracyShort>0.9</AccuracyShort>
+      <AccuracyMedium>0.9</AccuracyMedium>
+      <AccuracyLong>0.9</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags Inherit="False">
+      <li>psychicGun</li>
+    </weaponTags>
+    <costList>
+      <Steel>50</Steel>
+	  <ComponentSpacer>1</ComponentSpacer>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+	  <recipeUsers Inherit ="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_PsychicArsenal">
+			<isPsychicWeapon>true</isPsychicWeapon>
+			<compatibleAbilities>
+				<li>Berserk</li>
+				<li>BerserkPulse</li>
+				<li>ManhunterPulse</li>
+				<li>Neuroquake</li>
+			</compatibleAbilities>
+			<secondaryAbilities>
+				<li>WordOfTrust</li>
+				<li>WordOfJoy</li>
+				<li>WordOfLove</li>
+				<li>WordOfSerenity</li>
+				<li>WordOfInspiration</li>
+			</secondaryAbilities>
+			<entropyGain>25.0</entropyGain>
+		</li>
+	</modExtensions>
+    <verbs>
+      <li>
+        <verbClass>Psychic_Arsenal.PsychicShoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>PP_Projected_Voice</defaultProjectile>
+        <warmupTime>4.0</warmupTime>
+        <range>45.9</range>
+        <soundCast>PP_VoiceCaster</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+		<onlyManualCast>true</onlyManualCast>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>transmitter</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  </Defs>

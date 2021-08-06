@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>PP_MindGraft1</defName>
+    <label>mind graft</label>
+	<hediffClass>HediffWithComps</hediffClass>
+	<description>The mental capabilities of this pawn has been greatly enhanced by the addition of a psychic pawn's own mind.</description>
+    <initialSeverity>1.0</initialSeverity>
+	<maxSeverity>1.0</maxSeverity>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-6</severityPerDay>
+      </li>
+    </comps>
+  	<defaultLabelColor>(0.09, 0.45, 0.15)</defaultLabelColor>      	
+    <isBad>false</isBad>
+    <stages>
+      <li>
+		<minSeverity>.001</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.2</offset>
+          </li>
+		  <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+        </capMods>
+		<statOffsets>
+		  <MeleeDodgeChance>10</MeleeDodgeChance>
+		  <AimingDelayFactor>-0.10</AimingDelayFactor>
+		  <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+	    </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>PP_MindGraft2</defName>
+    <label>mind graft</label>
+	<hediffClass>HediffWithComps</hediffClass>
+	<description>The mental capabilities of this pawn has been greatly enhanced by the addition of a psychic pawn's own mind.</description>
+    <initialSeverity>1.0</initialSeverity>
+	<maxSeverity>1.0</maxSeverity>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4</severityPerDay>
+      </li>
+    </comps>
+  	<defaultLabelColor>(0.09, 0.45, 0.15)</defaultLabelColor>      	
+    <isBad>false</isBad>
+    <stages>
+      <li>
+		<minSeverity>.001</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.4</offset>
+          </li>
+		  <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.3</offset>
+          </li>
+        </capMods>
+		<statOffsets>
+		  <MeleeDodgeChance>15</MeleeDodgeChance>
+		  <AimingDelayFactor>-0.15</AimingDelayFactor>
+		  <MentalBreakThreshold>-0.1</MentalBreakThreshold>
+	    </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>PP_MindGraft3</defName>
+    <label>mind graft</label>
+	<hediffClass>HediffWithComps</hediffClass>
+	<description>The mental capabilities of this pawn has been greatly enhanced by the addition of a psychic pawn's own mind.</description>
+    <initialSeverity>1.0</initialSeverity>
+	<maxSeverity>1.0</maxSeverity>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2</severityPerDay>
+      </li>
+    </comps>
+  	<defaultLabelColor>(0.09, 0.45, 0.15)</defaultLabelColor>      	
+    <isBad>false</isBad>
+    <stages>
+      <li>
+		<minSeverity>.001</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.75</offset>
+          </li>
+		  <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.6</offset>
+          </li>
+        </capMods>
+		<statOffsets>
+		  <MeleeDodgeChance>25</MeleeDodgeChance>
+		  <AimingDelayFactor>-0.25</AimingDelayFactor>
+		  <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+	    </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+<HediffDef>
+    <defName>PP_MindGraft4</defName>
+    <label>mind graft</label>
+	<hediffClass>HediffWithComps</hediffClass>
+	<description>The mental capabilities of this pawn has been greatly enhanced by the addition of a psychic pawn's own mind.</description>
+    <initialSeverity>1.0</initialSeverity>
+	<maxSeverity>1.0</maxSeverity>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+      </li>
+    </comps>
+  	<defaultLabelColor>(0.09, 0.45, 0.15)</defaultLabelColor>      	
+    <isBad>false</isBad>
+    <stages>
+      <li>
+		<minSeverity>.001</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>1.5</offset>
+          </li>
+		  <li>
+            <capacity>Consciousness</capacity>
+            <offset>1.0</offset>
+          </li> 
+        </capMods>
+		<statOffsets>
+		  <MeleeDodgeChance>50</MeleeDodgeChance>
+		  <AimingDelayFactor>-0.5</AimingDelayFactor>
+		  <MentalBreakThreshold>-0.5</MentalBreakThreshold>
+	    </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

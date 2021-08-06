@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<ThingDef ParentName="OrbitalUtilityBase">
+    <defName>PP_Sirens_Call</defName>
+    <label>siren's call</label>
+    <description>A targeting device to determine where ship chunks should crash. It is unknown whether the device helps locate orbiting derelicts and calls them down, or incites functioning ships into becoming those derelicts. In any case, this a reliable way to rain space debris on your enemies.
+WARNING: Will always use 180% of the casters maximum psychic heat. This means there is a large chance they will be incapacitated after usage. Does not require removal of heat limiter to use.
+	
+&lt;color=orange&gt;&lt;b&gt;Compatible Psycasts:  &lt;/b&gt;&lt;/color&gt;Berserk, Berserk Pulse, Neuroquake
+&lt;color=orange&gt;&lt;b&gt;Secondary Psycasts:  &lt;/b&gt;&lt;/color&gt;Skip, Farksip
+&lt;color=orange&gt;&lt;b&gt;Psychic Heat Gain:  &lt;/b&gt;&lt;/color&gt;180% of users maximum</description>
+    <graphicData>
+      <texPath>Weapons/sc</texPath>
+      <drawSize>(0.7,0.7)</drawSize>
+    </graphicData>
+    <apparel>
+      <wornGraphicPath>Things/Item/Equipment/WeaponSpecial/OrbitalTargeterBombardment/OrbitalTargeterBombardment</wornGraphicPath>
+      <wornGraphicData>
+        <renderUtilityAsPack>true</renderUtilityAsPack>
+        <north>
+          <male>  <offset>(0.25, -0.25)</offset> </male>
+          <female><offset>(0.25,-0.25)</offset> </female>
+          <thin>  <offset>(0.15,-0.25)</offset> </thin>
+          <hulk>  <offset>(0.25,-0.3)</offset> </hulk>
+          <fat>   <offset>(0.45,-0.25)</offset> </fat>
+        </north>
+        <south>
+          <male>  <offset>(-0.3, -0.25)</offset> </male>
+          <female><offset>(-0.3,-0.25)</offset> </female>
+          <thin>  <offset>(-0.2,-0.25)</offset> </thin>
+          <hulk>  <offset>(-0.3,-0.3)</offset> </hulk>
+          <fat>   <offset>(-0.5,-0.25)</offset> </fat>
+        </south>
+        <east>
+          <offset>(-0.05,-0.3)</offset>
+        </east>
+
+        <male>  <scale>(0.4,0.4)</scale> </male>
+        <female><scale>(0.4,0.4)</scale> </female>
+        <thin>  <scale>(0.4,0.4)</scale> </thin>
+        <hulk>  <scale>(0.4,0.4)</scale> </hulk>
+        <fat>   <scale>(0.4,0.4)</scale> </fat>
+      </wornGraphicData>
+    </apparel>
+    <thingSetMakerTags><li>RewardStandardHighFreq</li></thingSetMakerTags>
+    <verbs>
+      <li>
+        <verbClass>Psychic_Arsenal.Verb_SirensCall</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>3</warmupTime>
+        <ai_AvoidFriendlyFireRadius>23</ai_AvoidFriendlyFireRadius>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <range>44.9</range>
+        <burstShotCount>1</burstShotCount>
+        <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+        <soundCast>OrbitalTargeter_Fire</soundCast>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CompProperties_Reloadable">
+        <maxCharges>1</maxCharges>
+        <destroyOnEmpty>true</destroyOnEmpty>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>charge</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+	<modExtensions>
+		<li Class="Psychic_Arsenal.ModExtension_PsychicArsenal">
+			<isPsychicWeapon>true</isPsychicWeapon>
+			<compatibleAbilities>
+				<li>Berserk</li>
+				<li>BerserkPulse</li>
+				<li>Neuroquake</li>
+			</compatibleAbilities>
+			<secondaryAbilities>
+				<li>Skip</li>
+				<li>Farskip</li>
+			</secondaryAbilities>
+		</li>
+		<li Class="Psychic_Arsenal.ModExtension_Siren">
+			<sirensBombardment>PP_SirensCrash</sirensBombardment>
+			<chunkIncoming>PP_CalledShipChunkIncoming</chunkIncoming>
+			<chunk>PP_CalledShipChunk</chunk>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  
+  <RecipeDef>
+    <defName>MakeSirensCall</defName>
+    <label>make Siren's Call</label>
+    <description>Craft a Siren's Call.</description>
+    <jobString>Making Siren's Call.</jobString>
+	<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+	<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    <workAmount>20000</workAmount>
+	<recipeUsers>
+      <li>FabricationBench</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+	   <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>35</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>ComponentSpacer</li>
+        <li>ComponentIndustrial</li>
+		<li>Plasteel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <PP_Sirens_Call>1</PP_Sirens_Call>
+    </products>
+    <researchPrerequisite>ShipBasics</researchPrerequisite>
+	<skillRequirements>
+		<Crafting>15</Crafting>
+	</skillRequirements>
+	<workSkill>Crafting</workSkill>
+  </RecipeDef>
+  
+</Defs>

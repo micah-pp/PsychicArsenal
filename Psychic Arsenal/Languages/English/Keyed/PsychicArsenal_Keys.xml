@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<LanguageData>
+	<PPPsychicArsenal>Requires specific psycast</PPPsychicArsenal>
+	<PP_NeuralHeatHigh>{0} can't fire due to neural heat.</PP_NeuralHeatHigh>
+	<PP_Wander>{0} caused {1} to begin to psychotically wander.</PP_Wander>
+	<PP_Flee>{0} caused {1} to flee in panic.</PP_Flee>
+	<PP_VoiceCaster_Berserk>{0} caused {1} to enter a berserk state.</PP_VoiceCaster_Berserk>
+	<PP_VoiceCaster_Manhunter>{0} caused {1} to enter a manhunter state.</PP_VoiceCaster_Manhunter>
+	<PP_Buff>{0} had {1} enter an enraged state.</PP_Buff>
+</LanguageData>

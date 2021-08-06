@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods><li>RunAndGun</li></mods>
+	<match Class="PatchOperationAddModExtension">
+		<xpath>/Defs/ThingDef[defName="PP_Solarfaust" or defName="PP_Lightning_Launcher" or defName="PP_Reverse_Shield" or defName="PP_Voice_Caster"]</xpath>
+		<value>
+			<li Class="RunAndGun.DefModExtension_SettingDefaults">
+				<weaponForbidden>true</weaponForbidden>
+			</li>
+		</value>
+	</match>
+</Operation>
+	
+</Patch>
